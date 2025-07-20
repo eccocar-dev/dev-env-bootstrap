@@ -26,3 +26,19 @@ curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/t
 ## Requirements
 
 - You must have `curl` and `bash` installed.
+
+## References
+
+For further reading and professional guides on setting up Elixir and Phoenix development environments, consider the following resources:
+
+- [Setting up Elixir & Phoenix](https://aswinmohan.me/setup-elixir-phoenix) by Aswin Mohan  
+  A comprehensive guide for configuring Elixir and Phoenix on your system.
+
+- [Preparing the Elixir Development Environment](https://dev.to/muzhawir/preparing-the-elixir-development-environment-39ep) by Muzhawir  
+  Step-by-step instructions for preparing your machine for Elixir development.
+
+- [Perfect Elixir Environment Setup](https://dev.to/jonlauridsen/perfect-elixir-environment-setup-1145) by Jon Lauridsen  
+  Best practices and tips for creating an optimal Elixir development environment.
+
+- [Elixir and Phoenix Setup Gist](https://gist.github.com/sstrecker/9de2f970be4f779395d832cfcd331e25) by sstrecker  
+  A curated gist with commands and notes for installing Elixir and Phoenix.
