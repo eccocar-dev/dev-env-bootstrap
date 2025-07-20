@@ -14,18 +14,18 @@ You can run the scripts directly from the terminal using `curl`:
 ### Run bootstrap-asdf
 
 ```sh
-curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/bootstrap-asdf.sh | bash
+curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/bootstrap-asdf.sh | zsh
 ```
 
 ### Run teardown-asdf
 
 ```sh
-curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/teardown-asdf.sh | bash
+curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/teardown-asdf.sh | zsh
 ```
 
 ## Requirements
 
-- You must have `curl` and `bash` installed.
+- You must have `curl` and `zsh` installed.
 
 ## References
 

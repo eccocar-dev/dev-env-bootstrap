@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # ===============================================================
 # Uninstall asdf setup: Removes plugins, asdf via Homebrew,
