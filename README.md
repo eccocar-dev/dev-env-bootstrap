@@ -1,14 +1,15 @@
 # dev-env-bootstrap
 
-This project provides two alternatives for managing your development environment: using **asdf** or **pkgx**. Each tool has its own setup and teardown scripts.
+This project provides two alternatives for managing your development environment: using **asdf** or **mise**. Each tool has its own setup and teardown scripts.  
+**Note:** We recommend using **asdf** for its transparency and control.
 
 ## Environment Management Alternatives
 
-### 1. Using asdf
+### 1. Using asdf (Recommended)
 
 - **asdf** is a versatile version manager that allows you to manage multiple versions of programming languages and tools in your local environment.
-- **Pros:** Wide plugin ecosystem, supports many languages, easy to use.
-- **Cons:** Requires shell integration, plugins may need manual updates.
+- **Pros:** Wide plugin ecosystem, supports many languages, clear and explicit configuration, easy to debug and customize.
+- **Cons:** Requires manual shell integration and configuration, plugins may need manual updates.
 
 #### Scripts
 
@@ -27,38 +28,39 @@ curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/t
 
 ---
 
-### 2. Using pkgx
+### 2. Using mise
 
-- **pkgx** is a modern package manager that installs and runs tools in isolated environments, focusing on simplicity and speed.
-- **Pros:** No shell integration required, fast installations, ephemeral environments.
-- **Cons:** Smaller ecosystem, less granular version control compared to asdf.
+- **mise** is a modern version manager that aims for simplicity and speed. Internally, it uses asdf for many operations but hides configuration details, making it less transparent.
+- **Pros:** Fast installations, minimal manual setup, modern CLI.
+- **Cons:** Configuration is more opaque, hides underlying mechanisms (often asdf), less control for advanced users.
 
 #### Scripts
 
-- **Bootstrap:** Installs and configures pkgx.
-- **Teardown:** Removes pkgx and its configuration.
+- **Bootstrap:** Installs and configures mise.
+- **Teardown:** Removes mise and its configuration.
 
 **Run bootstrap with curl:**
 ```sh
-curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/bootstrap-pkgx.sh | zsh
+curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/bootstrap-mise.sh | zsh
 ```
 
 **Run teardown with curl:**
 ```sh
-curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/teardown-pkgx.sh | zsh
+curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/teardown-mise.sh | zsh
 ```
 
 ---
 
 ## Comparison Table
 
-| Feature                | asdf                              | pkgx                          |
+| Feature                | asdf                              | mise                          |
 |------------------------|-----------------------------------|-------------------------------|
-| Language Support       | Extensive (via plugins)           | Limited but growing           |
-| Version Management     | Granular, per-tool                | Global, less granular         |
-| Shell Integration      | Required                          | Not required                  |
+| Language Support       | Extensive (via plugins)           | Extensive (via asdf plugins)  |
+| Version Management     | Granular, per-tool                | Granular, per-tool            |
+| Shell Integration      | Required, manual                  | Minimal, mostly automatic     |
+| Transparency          | High (explicit config)             | Low (hidden config, uses asdf)|
 | Installation Speed     | Moderate                          | Fast                          |
-| Ecosystem              | Mature, large community           | Newer, smaller community      |
+| Ecosystem              | Mature, large community           | Newer, growing community      |
 
 ## Requirements
 
