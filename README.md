@@ -1,27 +1,64 @@
 # dev-env-bootstrap
 
-This project includes two main scripts: `bootstrap-asdf` and `teardown-asdf`.
+This project provides two alternatives for managing your development environment: using **asdf** or **pkgx**. Each tool has its own setup and teardown scripts.
 
-## What are they used for?
+## Environment Management Alternatives
 
-- **bootstrap-asdf**: Installs and configures the [asdf](https://asdf-vm.com/) version manager on your local environment, allowing you to manage multiple versions of tools and programming languages.
-- **teardown-asdf**: Removes the configuration and uninstalls asdf from your local environment.
+### 1. Using asdf
 
-## How to run with `curl`
+- **asdf** is a versatile version manager that allows you to manage multiple versions of programming languages and tools in your local environment.
+- **Pros:** Wide plugin ecosystem, supports many languages, easy to use.
+- **Cons:** Requires shell integration, plugins may need manual updates.
 
-You can run the scripts directly from the terminal using `curl`:
+#### Scripts
 
-### Run bootstrap-asdf
+- **Bootstrap:** Installs and configures asdf.
+- **Teardown:** Removes asdf and its configuration.
 
+**Run bootstrap with curl:**
 ```sh
 curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/bootstrap-asdf.sh | zsh
 ```
 
-### Run teardown-asdf
-
+**Run teardown with curl:**
 ```sh
 curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/teardown-asdf.sh | zsh
 ```
+
+---
+
+### 2. Using pkgx
+
+- **pkgx** is a modern package manager that installs and runs tools in isolated environments, focusing on simplicity and speed.
+- **Pros:** No shell integration required, fast installations, ephemeral environments.
+- **Cons:** Smaller ecosystem, less granular version control compared to asdf.
+
+#### Scripts
+
+- **Bootstrap:** Installs and configures pkgx.
+- **Teardown:** Removes pkgx and its configuration.
+
+**Run bootstrap with curl:**
+```sh
+curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/bootstrap-pkgx.sh | zsh
+```
+
+**Run teardown with curl:**
+```sh
+curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/teardown-pkgx.sh | zsh
+```
+
+---
+
+## Comparison Table
+
+| Feature                | asdf                              | pkgx                          |
+|------------------------|-----------------------------------|-------------------------------|
+| Language Support       | Extensive (via plugins)           | Limited but growing           |
+| Version Management     | Granular, per-tool                | Global, less granular         |
+| Shell Integration      | Required                          | Not required                  |
+| Installation Speed     | Moderate                          | Fast                          |
+| Ecosystem              | Mature, large community           | Newer, smaller community      |
 
 ## Requirements
 
