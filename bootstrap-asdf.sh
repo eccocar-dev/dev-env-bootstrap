@@ -8,6 +8,10 @@
 
 set -e  # Exit immediately if any command fails
 
+# ===============================================================
+# Metadata / Compatibility
+# ===============================================================
+
 if [[ "$OSTYPE" != "darwin"* ]]; then
   echo "❌ This script is intended for macOS. Aborting."
   exit 1
