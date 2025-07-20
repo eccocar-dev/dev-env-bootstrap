@@ -17,11 +17,13 @@ This project provides two alternatives for managing your development environment
 - **Teardown:** Removes asdf and its configuration.
 
 **Run bootstrap with curl:**
+
 ```sh
 curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/bootstrap-asdf.sh | zsh
 ```
 
 **Run teardown with curl:**
+
 ```sh
 curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/teardown-asdf.sh | zsh
 ```
@@ -40,11 +42,13 @@ curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/t
 - **Teardown:** Removes mise and its configuration.
 
 **Run bootstrap with curl:**
+
 ```sh
 curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/bootstrap-mise.sh | zsh
 ```
 
 **Run teardown with curl:**
+
 ```sh
 curl -sSL https://raw.githubusercontent.com/eccocar-dev/dev-env-bootstrap/main/teardown-mise.sh | zsh
 ```
