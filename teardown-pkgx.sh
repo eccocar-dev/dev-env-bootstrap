@@ -7,7 +7,7 @@
 # ⚠️ Does NOT modify .gitignore
 # ===============================================================
 
-set -euo pipefail
+set -e 
 
 PKGX_FILE=".pkgx.toml"
 
@@ -56,11 +56,12 @@ pkgx::prune_installed_packages() {
 pkgx::full_uninstall() {
   echo "🧨 Fully uninstalling pkgx..."
 
-  local BIN_PATHS=(
+  local -a BIN_PATHS=(
     /usr/local/bin/pkgx
     /usr/local/bin/pkgxm
   )
-  local USER_PATHS=(
+  
+  local -a USER_PATHS=(
     "$HOME/.pkgx"
     "$HOME/Library/Caches/pkgx"
     "$HOME/Library/Application Support/pkgx"
@@ -69,14 +70,14 @@ pkgx::full_uninstall() {
   for path in "${BIN_PATHS[@]}"; do
     if [[ -f "$path" ]]; then
       echo "🗑️ Removing $path (requires sudo)..."
-      sudo rm -f "$path"
+      sudo /bin/rm -f "$path"
     fi
   done
 
   for path in "${USER_PATHS[@]}"; do
     if [[ -d "$path" ]]; then
       echo "🧽 Removing $path..."
-      rm -rf "$path"
+      /bin/rm -rf "$path"
     fi
   done
 

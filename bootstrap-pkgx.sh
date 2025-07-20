@@ -6,7 +6,7 @@
 # via pkgx with pinned versions, only if not already present.
 # ===============================================================
 
-set -euo pipefail
+set -e 
 
 # ===============================================================
 # Metadata / Compatibility
@@ -27,9 +27,9 @@ fi
 # ===============================================================
 
 ERLANG_VERSION="28.0.2"
-ELIXIR_VERSION="1.18.4-otp-27"
+ELIXIR_VERSION="1.18.4"
 NODE_VERSION="22.17.1"
-POSTGRES_VERSION="17.5"
+POSTGRES_VERSION="17.2.0"
 
 PKGX_FILE=".pkgx.toml"
 
@@ -51,8 +51,13 @@ brew::install_if_missing() {
 pkgx::ensure_tool() {
   local tool="$1"
   local version="$2"
-  echo "📦 Ensuring $tool@$version is available via pkgx (or system install)..."
-  pkgx mash ensure +"$tool@$version" --version >/dev/null && echo "✅ $tool@$version is ready"
+  echo "📦 Ensuring $tool@$version is available via pkgx..."
+  if pkgx "+$tool@$version" --version >/dev/null 2>&1; then
+    echo "✅ $tool@$version is ready"
+  else
+    echo "❌ Failed to ensure $tool@$version"
+    exit 1
+  fi
 }
 
 pkgx::generate_pkgx_file_if_in_project() {
@@ -102,10 +107,10 @@ echo "🚀 Starting pkgx bootstrap for macOS..."
 
 brew::install_if_missing pkgx
 
-pkgx::ensure_tool erlang "$ERLANG_VERSION"
-pkgx::ensure_tool elixir "$ELIXIR_VERSION"
-pkgx::ensure_tool nodejs "$NODE_VERSION"
-pkgx::ensure_tool postgresql "$POSTGRES_VERSION"
+pkgx::ensure_tool erlang.org "$ERLANG_VERSION"
+pkgx::ensure_tool elixir-lang.org "$ELIXIR_VERSION"
+pkgx::ensure_tool nodejs.org "$NODE_VERSION"
+pkgx::ensure_tool postgresql.org "$POSTGRES_VERSION"
 
 pkgx::generate_pkgx_file_if_in_project
 
