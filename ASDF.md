@@ -40,7 +40,7 @@ if [ -f "$(brew --prefix asdf 2>/dev/null)/libexec/asdf.sh" ]; then
 fi
 ```
 
-Reload your .zshenv:
+Reload your `~/.zshenv`:
 
 ```bash
 source ~/.zshenv
@@ -51,18 +51,6 @@ Generate completions:
 ```bash
 mkdir -p ${ASDF_DATA_DIR:-$HOME/.asdf}/completions
 asdf completion zsh > ${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf
-```
-
-Reload your shell:
-
-```bash
-source ~/.zshrc
-```
-
-Finally, load `asdf` into the current shell session:
-
-```bash
-source $(brew --prefix asdf)/libexec/asdf.sh
 ```
 
 ---
