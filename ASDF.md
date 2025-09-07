@@ -107,7 +107,7 @@ echo "legacy_version_file = yes" >> ~/.asdfrc
 brew install gcc readline zlib curl ossp-uuid icu4c pkg-config
 ```
 
-Configure in `~/.zshrc`:
+Configure in `~/.zshenv`:
 
 ```bash
 # Postgres plugin build config
