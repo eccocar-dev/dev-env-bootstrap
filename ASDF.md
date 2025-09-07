@@ -47,6 +47,12 @@ Reload your shell:
 source ~/.zshrc
 ```
 
+Finally, load `asdf` into the current shell session:
+
+```bash
+source $(brew --prefix asdf)/libexec/asdf.sh
+```
+
 ---
 
 ### 3. Install Erlang dependencies
