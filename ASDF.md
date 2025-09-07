@@ -19,9 +19,9 @@ This document describes how to install and configure **Erlang**, **Elixir**, **N
 brew install asdf
 ```
 
-### 2. Configure `asdf` in your `~/.zshrc`
+### 2. Configure `asdf` in your `~/.zshenv`
 
-Add these lines to `~/.zshrc`:
+Add these lines to `~/.zshenv`:
 
 ```bash
 # asdf: Custom data directory (default)
