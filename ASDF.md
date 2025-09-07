@@ -131,16 +131,16 @@ asdf plugin add postgres https://github.com/smashedtoatoms/asdf-postgres
 
 ```bash
 asdf install erlang 28.0.2
-asdf global erlang 28.0.2
+asdf set -u erlang 28.0.2
 
 asdf install elixir 1.18.4-otp-27
-asdf global elixir 1.18.4-otp-27
+asdf set -u elixir 1.18.4-otp-27
 
 asdf install nodejs 22.17.1
-asdf global nodejs 22.17.1
+asdf set -u nodejs 22.17.1
 
 asdf install postgres 17.5
-asdf global postgres 17.5
+asdf set -u postgres 17.5
 ```
 
 ---
