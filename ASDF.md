@@ -61,7 +61,7 @@ asdf completion zsh > ${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf
 brew install autoconf openssl wxwidgets libxslt fop
 ```
 
-Configure environment variables in `~/.zshrc`:
+Configure environment variables in `~/.zshenv`:
 
 ```bash
 # ASDF / Erlang settings
@@ -69,6 +69,12 @@ export KERL_CONFIGURE_OPTIONS="--disable-debug --disable-silent-rules --without-
 export KERL_BUILD_DOCS="yes"
 export KERL_INSTALL_HTMLDOCS="no"
 export KERL_INSTALL_MANPAGES="no"
+```
+
+Reload your `~/.zshenv`:
+
+```bash
+source ~/.zshenv
 ```
 
 ---
