@@ -150,10 +150,10 @@ asdf set -u postgres 17.5
 If you are working in a project with `mix.exs`, `package.json` or `.git`, set local versions:
 
 ```bash
-asdf local erlang 28.0.2
-asdf local elixir 1.18.4-otp-27
-asdf local nodejs 22.17.1
-asdf local postgres 17.5
+asdf set erlang 28.0.2
+asdf set elixir 1.18.4-otp-27
+asdf set nodejs 22.17.1
+asdf set postgres 17.5
 ```
 
 This will create a `.tool-versions` file in your project directory.
