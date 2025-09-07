@@ -40,6 +40,12 @@ if [ -f "$(brew --prefix asdf 2>/dev/null)/libexec/asdf.sh" ]; then
 fi
 ```
 
+Reload your .zshenv:
+
+```bash
+source ~/.zshenv
+```
+
 Generate completions:
 
 ```bash
