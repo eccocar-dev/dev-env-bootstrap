@@ -24,14 +24,20 @@ brew install asdf
 Add these lines to `~/.zshenv`:
 
 ```bash
-# asdf: Custom data directory (default)
-export ASDF_DATA_DIR="$HOME/.asdf"
+# asdf configuration (only if installed with Homebrew)
+if [ -f "$(brew --prefix asdf 2>/dev/null)/libexec/asdf.sh" ]; then
+  # Custom data directory
+  export ASDF_DATA_DIR="$HOME/.asdf"
 
-# asdf: Add shims to PATH
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+  # Add shims to PATH
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-# asdf completions
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+  # Add completions
+  fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
+  # Load asdf
+  . "$(brew --prefix asdf)/libexec/asdf.sh"
+fi
 ```
 
 Generate completions:
